@@ -1,0 +1,94 @@
+{% extends 'adminheader.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+{% block content %}
+<style type="text/css">
+		table, tr, td, th{
+		border:1px solid black;
+		border-collapse:collapse;
+		text-align:center;
+		font-size:18px;
+		}
+		table{
+		width:100%;
+		}
+		th,td{
+		height:50px;
+		}
+	</style>
+<main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title dark-background" data-aos="fade" style="background-image: url(assets/img/page-title-bg.webp);">
+      <div class="container position-relative">
+        <h1>Admin View Cancelled Page</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="/adminmainpage">Home</a></li>
+            <li class="current">Admin View Cancelled Page</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- About 3 Section -->
+    <section id="about-3" class="about-3 section">
+
+      <div class="container">
+<!-- About Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-12 wow fadeIn" data-wow-delay="0.5s">
+                    <h1 class="mb-4">Admin View Cancelled Page</h1>
+                    <p>
+<table>
+                    <thead>
+                    <tr>
+                        <th>Booked Id</th>
+                        <th>Customer Id</th>                        
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>EmailId</th>
+                        <th>Phone Number</th>
+                        <th>Address</th>
+                        <th>Booked Date</th>
+                        <th>Amount</th>
+                        <th>Booking Status</th>
+                        <th>Payment Status</th>                        
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for row in data %}
+                    <tr>
+                        <td>{{row.id}}</td>
+                        <td>{{row.CustomerId}}</td>
+                        <td>{{row.FirstName}}</td>
+                        <td>{{row.LastName}}</td>
+                        <td>{{row.EmailId}}</td>
+                        <td>{{row.PhoneNumber}}</td>
+                        <td>{{row.Address}}</td>
+                        <td>{{row.TicketDate}}</td>
+                        <td>{{row.Amount}}</td>
+                        <td>{{row.TicketStatus}}</td>
+                        <td>{{row.PaymentStatus}}</td>                        
+                    </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+      </div>
+    <!-- About End -->
+    </section><!-- /About 3 Section -->
+
+</main>
+{% endblock %}
+</body>
+</html>
